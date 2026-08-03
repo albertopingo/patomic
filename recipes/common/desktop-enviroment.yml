@@ -1,0 +1,24 @@
+modules:
+  - type: dnf
+    install:
+      packages:
+        - niri
+        - xwayland-satellite
+        - noctalia
+        - alacritty
+
+  - type: dnf
+    repos:
+      copr:
+        - errornointernet/walker
+    install:
+      packages:
+        - walker
+        - elephant
+
+  - type: dnf
+    install:
+      packages:
+        - swappy
+        - grim
+        - slurp

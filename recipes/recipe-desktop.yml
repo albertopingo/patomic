@@ -7,15 +7,17 @@ base-image: ghcr.io/ublue-os/bazzite-gnome-nvidia
 image-version: latest
 
 modules:
-  - from-file: common/system.yml
-  - from-file: common/desktop-enviroment.yml
-  - from-file: common/flatpak.yml
-  - from-file: common/dev.yml
-
   - type: files
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+  - from-file: common/system.yml
+  - from-file: common/desktop-enviroment.yml
+  - from-file: common/flatpak.yml
+  - from-file: common/dev.yml
+  - from-file: common/services.yml
+
 
   - type: dnf
     repos:

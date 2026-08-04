@@ -5,8 +5,5 @@ modules:
         - neovim
         - nix
         - tmux
-
-  - type: script
-    scripts:
-      - vscode.sh
-      - cursor.sh
+        - code
+        - cursor

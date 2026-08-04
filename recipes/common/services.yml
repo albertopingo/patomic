@@ -1,0 +1,9 @@
+modules:
+  - type: systemd
+    # system:
+    #   enabled:
+    #     - podman.socket
+    user:
+      enabled:
+        - elephant.service
+        - walker.service

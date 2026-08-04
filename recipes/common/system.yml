@@ -3,3 +3,17 @@ modules:
     install:
       packages:
         - yt-dlp
+        - zsh
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - JetBrainsMono
+
+  - type: script
+    scripts:
+      - install-rose-pine.sh
+
+  - type: gschema-overrides
+    include:
+      - patomic.gschema.override

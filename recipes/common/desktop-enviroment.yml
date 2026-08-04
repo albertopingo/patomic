@@ -28,5 +28,13 @@ modules:
     install:
       packages:
         - mullvad-browser
-        - librewolf
         - brave-browser
+
+  - type: dnf
+    repos:
+      cleanup: true # clean up added repos after module is done
+      files:
+        - https://repo.librewolf.net/librewolf.repo
+    install:
+      packages:
+        - librewolf

@@ -23,3 +23,10 @@ modules:
         - grim
         - slurp
         - netcat
+
+  - type: dnf
+    install:
+      packages:
+        - mullvad-browser
+        - librewolf
+        - brave-browser

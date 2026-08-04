@@ -7,3 +7,4 @@ modules:
       enabled:
         - elephant.service
         - walker.service
+        - podman.socket

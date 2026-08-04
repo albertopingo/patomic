@@ -1,4 +1,9 @@
 modules:
+  - type: dnf
+    install:
+      packages:
+        - podman
+
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
@@ -8,4 +13,6 @@ modules:
           - org.mozilla.firefox
           - app.zen_browser.zen
           - com.stremio.Stremio
+          - md.obsidian.Obsidian
+          - com.github.tenderowl.frog
       - scope: user # Also add Flathub user repo, but no user packages

@@ -5,7 +5,7 @@ modules:
         - yt-dlp
         - zsh
         - easyeffects
-        - proton-vpn-gnome-desktop
+        # - proton-vpn-gnome-desktop
 
   - type: fonts
     fonts:

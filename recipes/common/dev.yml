@@ -1,0 +1,12 @@
+modules:
+  - type: dnf
+    install:
+      packages:
+        - neovim
+        - nix
+        - tmux
+
+  - type: script
+    scripts:
+      - vscode.sh
+      - cursor.sh

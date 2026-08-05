@@ -10,6 +10,13 @@ ICONS_URL="https://github.com/rose-pine/gtk/releases/latest/download/rose-pine-i
 # THEME_GTK4_URL="https://github.com/rose-pine/gtk/releases/latest/download/gtk4.tar.gz"
 
 curl -Lo "$BUILD_DIR/rose-pine-icons.tar.gz" "$ICONS_URL"
-tar -xzf "$BUILD_DIR/rose-pine-icons.tar.gz" -C /usr/share
+# tar -xzf "$BUILD_DIR/rose-pine-icons.tar.gz" -C /usr/share
+
+TMP=$(mktemp -d)
+tar -xzf "$BUILD_DIR/rose-pine-icons.tar.gz" -C "$TMP"
+rm -rf /usr/share/icons/rose-pine-icons
+mkdir /usr/share/icons/rose-pine-icons
+cp -aL "$TMP/rose-pine-icons/." /usr/share/icons/rose-pine-icons/
 
 rm -rf "$BUILD_DIR"
+rm -rf "$TMP"

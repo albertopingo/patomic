@@ -7,4 +7,3 @@ modules:
         - code
         - cursor
         - rustup
-        - nix-core

@@ -6,5 +6,5 @@ modules:
         - neovim
         - code
         - cursor
-        - nix
         - rustup
+        - nix-core

@@ -1,22 +1,23 @@
 #!/usr/bin/env bash
 set -oue pipefail
 
-echo "Installing Rose Pine icons..."
+echo "Rose Pine Icons - Installing"
 
-THEME_NAME="Rosepine-Dark"
 BUILD_DIR=$(mktemp -d)
-ICONS_URL="https://github.com/rose-pine/gtk/releases/latest/download/rose-pine-icons.tar.gz"
-# THEME_GTK3_URL="https://github.com/rose-pine/gtk/releases/latest/download/gtk3.tar.gz"
-# THEME_GTK4_URL="https://github.com/rose-pine/gtk/releases/latest/download/gtk4.tar.gz"
-
-curl -Lo "$BUILD_DIR/rose-pine-icons.tar.gz" "$ICONS_URL"
-# tar -xzf "$BUILD_DIR/rose-pine-icons.tar.gz" -C /usr/share
-
 TMP=$(mktemp -d)
-tar -xzf "$BUILD_DIR/rose-pine-icons.tar.gz" -C "$TMP"
-rm -rf /usr/share/icons/rose-pine-icons
-mkdir /usr/share/icons/rose-pine-icons
-cp -aL "$TMP/rose-pine-icons/." /usr/share/icons/rose-pine-icons/
 
-rm -rf "$BUILD_DIR"
-rm -rf "$TMP"
+trap 'rm -rf "$BUILD_DIR" "$TMP"' EXIT
+
+ICONS_URL="https://github.com/rose-pine/gtk/releases/latest/download/rose-pine-icons.tar.gz"
+ICON_DEST="/usr/share/icons/rose-pine-icons"
+
+echo "Rose Pine Icons - Curl"
+curl -Lo "$BUILD_DIR/rose-pine-icons.tar.gz" "$ICONS_URL"
+
+echo "Rose Pine Icons - Extract"
+tar --warning=no-unknown-keyword --no-xattrs -xzf "$BUILD_DIR/rose-pine-icons.tar.gz" -C "$TMP"
+
+echo "Rose Pine Icons - Copy to $ICON_DEST"
+rm -rf "$ICON_DEST"
+mkdir "$ICON_DEST"
+cp -aL "$TMP/icons/rose-pine-icons/." "$ICON_DEST/"

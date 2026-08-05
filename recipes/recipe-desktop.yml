@@ -17,7 +17,7 @@ modules:
   - from-file: common/flatpak.yml
   - from-file: common/dev.yml
   - from-file: common/services.yml
-
+  - from-file: common/nix.yaml
 
   - type: dnf
     repos:

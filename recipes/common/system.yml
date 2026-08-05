@@ -12,9 +12,9 @@ modules:
       nerd-fonts:
         - JetBrainsMono
 
-  - type: script
-    scripts:
-      - install-rose-pine.sh
+  # - type: script
+  #   scripts:
+  #     - install-rose-pine.sh
 
   - type: gschema-overrides
     include:
